@@ -55,7 +55,7 @@ local CustomImageManagerAssets = {
     },
 
     LoadingIcon = {
-        RobloxId = 18250018004,
+        RobloxId = 97544096941083,
         Path = "Obsidian/assets/LoadingIcon.png",
         URL = BaseURL .. "assets/LoadingIcon.png",
 
