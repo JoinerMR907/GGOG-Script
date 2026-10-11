@@ -14,7 +14,11 @@ local Teams: Teams = cloneref(game:GetService("Teams"))
 local TweenService: TweenService = cloneref(game:GetService("TweenService"))
 
 local getgenv = getgenv or function()
-    return shared
+    return shared or _G
+end
+local function getEnvironment()
+    local environment = getgenv()
+    return if type(environment) == "table" then environment else _G
 end
 local setclipboard = setclipboard or nil
 local protectgui = protectgui or (syn and syn.protect_gui) or function() end
@@ -14863,10 +14867,10 @@ function Library:Unload()
     Library.KeybindFrame = nil
     Library.KeybindContainer = nil
 
-    getgenv().Library = nil
+    getEnvironment().Library = nil
 end
 
-getgenv().Library = Library
+getEnvironment().Library = Library
 return Library
 ]====]
 sources.ThemeManager = [====[
